@@ -30,7 +30,7 @@ const NavMenu = () => {
             const allLinks = [...subMenuLinks, ...megaMenuLinks, ...homeSubMenuLinks].filter(Boolean) as string[];
 
             // Check if there are any dropdowns (sub_menus or home_sub_menu)
-            const hasDropdown = menu.home_sub_menu?.length > 0 || menu.sub_menus?.length > 0;
+            const hasDropdown = (menu.home_sub_menu?.length || 0) > 0 || (menu.sub_menus?.length || 0) > 0;
 
             return (
                <li

@@ -35,7 +35,7 @@ const Banner = () => {
                            </span> <br />
                            With our Expert-Led Courses
                         </h3>
-                        <p style={{ color: '#FFFFFF', fontWeight: 200, fontFamily: 'inherit' }} className="pb-4">Transform your skills and advance your career with flexible, online learning."</p>
+                        <p style={{ color: '#FFFFFF', fontWeight: 200, fontFamily: 'inherit' }} className="pb-4">Transform your skills and advance your career with flexible, online learning.</p>
                         <div className="banner__btn-two" data-aos="fade-right" data-aos-delay="600">
                            <Link href="/contact" className="btn arrow-btn" style={{ backgroundColor: '#FFFFFF', color: '#1E1E1E' }}>Explore All our Courses <BtnArrow /></Link>
                            {/*<a onClick={() => setIsVideoOpen(true)} style={{ cursor: "pointer", borderColor: '#FFFFFF', borderWidth: '2px',  borderStyle: 'solid', borderRadius: '50px', padding: '10px 20px', color: '#FFFFFF' }} className="play-btn popup-video"> Become an Instructor</a>*/}
@@ -86,7 +86,7 @@ const Banner = () => {
                               <InjectableSvg src="/assets/img/banner/h2_banner_icon.svg" alt="img" className="injectable" />
                            </div>
                            <div className="content">
-                              <span>Let's help you grow your skill</span>
+                              <span>Let us help you grow your skill</span>
                            </div>
                         </div>
                      </div>

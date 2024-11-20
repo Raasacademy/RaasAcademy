@@ -1,10 +1,10 @@
 import mysql from 'mysql2';
 
 const db = mysql.createConnection({
-  host: 'localhost', // replace with your DB host
-  user: 'root', // replace with your DB username
-  password: '', // replace with your DB password
-  database: 'skillgro', // replace with your database name
+  host: 'raasacademy-db.c3ce4yum6ngd.us-east-1.rds.amazonaws.com',     // Database host, usually 'localhost' for local development
+  user: 'raasacademy', // Replace with your MySQL username
+  password: 'raasacademy2024', // Replace with your MySQL password
+  database: 'raasacademy-db', // Replace with your database name
 });
 
 export default function handler(req, res) {
