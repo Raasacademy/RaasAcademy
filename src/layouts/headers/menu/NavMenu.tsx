@@ -30,7 +30,7 @@ const NavMenu = () => {
             const allLinks = [...subMenuLinks, ...megaMenuLinks, ...homeSubMenuLinks].filter(Boolean) as string[];
 
             // Check if there are any dropdowns (sub_menus or home_sub_menu)
-            const hasDropdown = (menu.home_sub_menu?.length || 0) > 0 || (menu.sub_menus?.length || 0) > 0;
+            const hasDropdown = !!(menu.home_sub_menu?.length || menu.sub_menus?.length);
 
             return (
                <li
@@ -41,9 +41,9 @@ const NavMenu = () => {
 
                   {/* Render dropdown only if there are sub_menus or home_sub_menu items */}
                   {hasDropdown && (
-                     <ul className={`sub-menu ${menu.menu_class}`}>
+                     <ul className={`sub-menu ${menu.menu_class || ""}`}>
                         {/* Render home_sub_menu if available */}
-                        {menu.home_sub_menu?.length > 0 && (
+                        {menu.home_sub_menu && menu.home_sub_menu.length > 0 && (
                            <>
                               {menu.home_sub_menu.map((h_menu_details, i) => (
                                  <li key={i}>
@@ -74,7 +74,7 @@ const NavMenu = () => {
                         )}
 
                         {/* Render sub_menus if available */}
-                        {menu.sub_menus?.length > 0 && (
+                        {menu.sub_menus && menu.sub_menus.length > 0 && (
                            menu.sub_menus.map((sub_m: any, index: any) => {
                               const isSubMenuActive = isActive(sub_m.link);
                               const isAnyMegaChildActive = isAnyChildActive(
@@ -91,7 +91,7 @@ const NavMenu = () => {
                                     <Link href={sub_m.link}>{sub_m.title}</Link>
 
                                     {/* Render mega_menus if available */}
-                                    {sub_m.mega_menus?.length > 0 && (
+                                    {sub_m.mega_menus && sub_m.mega_menus.length > 0 && (
                                        <ul className="sub-menu">
                                           {sub_m.mega_menus.map((mega_m: any, i: any) => (
                                              <li key={i} className={isActive(mega_m.link) ? "active" : ""}>
